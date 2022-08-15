@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №3
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконала студентка групи КН-31, Бромот Дар'я</ion-title>
+
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+
+    </ion-buttons>
+
+    <ion-title>
+
+      Лабораторні роботи
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Каталог статей:</p>
+      <ul>
+        <li>Автор</li>
+        <li>Назва</li>
+        <li>Назва журналу</li>
+        <li>Номер журналу</li>
+        <li>Номер сторінки</li>
+      </ul>
+      <p>Запит. Ввести прізвище автора у окремій формі та позначити кольором всі статті даного автора.</p>
+      <ion-item>
+        <ion-label position="floating">Автор</ion-label>
+        <ion-input type="string" id="a" #Inputdata></ion-input>
+      </ion-item>
+      <button expand="block" (click)="load()">Завантажити</button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data; index as i" detail (click)="toggleDetails(i)">
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <p [ngStyle]="{color: getGreenColor(item.name,Inputdata.value)}">
+                <span>Стаття:</span> {{item.article}}
+              </p>
+            </ion-label>
+            <ion-text *ngIf="showDetails[i]" [ngStyle]="{color: getGreenColor(item.name,Inputdata.value)}">
+              <h2>Автор: {{item.name}} </h2>
+              <h2>Назва журналу: {{item.magazine}}</h2>
+              <h2>Номер випуску: {{item.number}}</h2>
+              <h2>Номер сторінки: {{item.page}}</h2>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

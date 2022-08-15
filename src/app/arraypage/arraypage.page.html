@@ -1,0 +1,44 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Лабораторна робота №1 </ion-title>
+  </ion-toolbar>
+
+<ion-toolbar>
+  <ion-title>Виконала студентка групи КН-31, Бромот Дар'я </ion-title>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Завдання №2</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="p_background">На заданому проміжку чисел [a,b] знайдіть кількість чисел, які кратні 29, парні і при діленні на 5 дають в остачі 2.</p>
+
+      <ion-item>
+        <ion-label position="floating">a bound</ion-label>
+        <ion-input type="number" id="a" value="1" #Inputa></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">b bound</ion-label>
+        <ion-input type="number" id="b" value="233" #Inputb></ion-input>
+      </ion-item>
+      <button expand="block" (click)="calculateArray(Inputa.value, Inputb.value)">Розрахунок</button>
+      <ion-item>
+        <p>Результат обчислення: {{sum}}</p>
+
+</ion-item>
+</ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №1</ion-title>
+  </ion-toolbar>
+</ion-footer>

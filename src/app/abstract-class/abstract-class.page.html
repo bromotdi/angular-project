@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №4
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконала студентка групи КН-31, Бромот Дар'я</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Лабораторні роботи
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <span class="black">Батьківський клас:</span> Населений пункт (поле назва)<br>
+      <span class="black">Нащадки:</span> Село (поле Кількість будинків-h, кількість мешканців в домі, площина села)<br>
+                                          Місто (поле кількість населення - h, площина міста)<br>
+      <span class="black">Методи:</span> Щільність населення<br>
+      <span class="black">Запит:</span> Організувати знаходження найменшої щільності населення.<br>
+      <ion-item>
+        <ion-label position="floating">N</ion-label>
+        <ion-input type="number" id="n" value="5" #Inputn></ion-input>
+      </ion-item>
+      <button expand="block" (click)="ras(Inputn.value)">Розрахунок</button>
+      <p *ngFor="let fig of figure" [ngStyle]="{color:getColor(fig.res,min)}">{{fig.show()}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

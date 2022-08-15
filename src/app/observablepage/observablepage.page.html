@@ -1,0 +1,68 @@
+<app-my-header name="Лабораторна робота №10">
+</app-my-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item>
+    <button (click)="nextCountry()">
+      Наступна країна 
+    </button>
+    <h6>
+      Поточна країна: <ion-input id="c" value={{country.name}} #Inputc></ion-input>
+    </h6>
+    <h6>
+    <button  (click)="updateCountry(Inputc.value)">Редагувати</button>
+    <button (click)="deleteCountry(country)">Видалити</button>
+    </h6>
+  </ion-item>
+
+  <ion-item *ngFor="let city of request.searchCity; let j = index; let item of items;">
+    <h6>
+      <ion-input id="b" value={{city.name}} #Inputb></ion-input>
+      <ion-input id="a" value={{city.mayor}} #Inputa></ion-input>
+    </h6>
+    <h6>
+      <button (click)="updateCity(city.id_firebase, Inputb.value, Inputa.value)">Редагувати</button>
+      <button (click)="deleteCity(city.id_firebase)">Видалити</button>
+    </h6>
+  </ion-item>
+
+  <ion-item *ngFor="let item of items;">
+    <h6>
+      <ion-input id="b" value={{item.name}} #Inputb></ion-input>
+      <ion-input  id="a" value={{item.mayor}} #Inputa></ion-input>
+    </h6>
+    <h6>
+      <button (click)="updateCity(item.key, Inputb.value, Inputa.value)">Реагувати</button>
+      <button (click)="deleteCity(item)">Видалити</button>
+    </h6>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Введіть нову країну:
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input #InputCountry></ion-input>
+      <button (click)="addCountry(InputCountry.value)">Додати країну</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Додати нове місто:
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label position="stacked">Введіть назву</ion-label>
+      <ion-input #InputName></ion-input>
+      <ion-label position="stacked">Введіть міського голову</ion-label>
+      <ion-input #InputMayor></ion-input>
+      <button (click)="addCity(InputName.value,InputMayor.value)">Додати місто</button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

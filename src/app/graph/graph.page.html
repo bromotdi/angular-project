@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №2
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконала студентка групи КН-31, Бромот Дар'я</ion-title>
+
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+
+    </ion-buttons>
+
+    <ion-title>
+
+      Лабораторні роботи
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Лабораторна робота №2</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p class="p_background">Створити застосунок для візуалізації графічних даних відповідно до варіанту та головне
+        меню для переходів між сторінками. Застосунок повинен містити дві сторінки для кожного з завдань.</p>
+      <ion-item>
+        <ion-label position="floating">Xn</ion-label>
+        <ion-input type="number" id="xn" value="-1.7" #Inputxn></ion-input>
+      </ion-item>
+
+      <ion-item>
+
+        <ion-label position="floating">xk</ion-label>
+        <ion-input type="number" id="xk" value="45.3" #Inputxk></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+
+        <ion-label position="floating">a</ion-label>
+        <ion-input type="number" id="a" value="0.3" #Inputa></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+
+        <ion-label position="floating">hc</ion-label>
+        <ion-input type="number" id="h" value="0.1" #Inputh></ion-input>
+
+      </ion-item>
+
+      <button expand="block" (click)="graphras(Inputxn.value, Inputxk.value, Inputa.value, Inputh.value)">
+        Розрахунок
+      </button>
+      <ion-item>
+        <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
